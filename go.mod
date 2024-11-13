@@ -3,5 +3,5 @@ module example.com/my-module
 go 1.19
 
 require (
-    github.com/hashicorp/go-getter v1.61
+    github.com/hashicorp/go-getter v1.6.1
 )
