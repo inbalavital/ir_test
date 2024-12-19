@@ -1,9 +1,8 @@
 AWSTemplateFormatVersion: '2010-09-09'
-Description: '(SO0015) - Cross-Account Manager Solution: Master Account template '
 Resources:
   CreateAccountRolesDDBTable:
+    Type: AWS::DynamoDB::Table
     Properties:
-      Type: AWS::DynamoDB::Table
       AttributeDefinitions:
         - AttributeName: Role
           AttributeType: S
