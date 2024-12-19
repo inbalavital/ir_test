@@ -18,5 +18,3 @@ Resources:
         ReadCapacityUnits: '5'
         WriteCapacityUnits: '5'
       TableName: CrossAccountManager-Account-Roles
-      PointInTimeRecoverySpecification:
-        PointInTimeRecoveryEnabled: True
