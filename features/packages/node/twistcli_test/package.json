@@ -1,7 +1,0 @@
-{
-  "name": "twistcli_test",
-  "version": "1.0.0",
-  "dependencies": {
-    "@microsoft/api-extractor": "7.18.19"
-  }
-}
