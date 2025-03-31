@@ -5,5 +5,4 @@ resource "aws_ebs_volume" "example" {
   tags = {
     Name = "HelloWorld"
   }
-  encrypted = true
 }
