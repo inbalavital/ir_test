@@ -20,17 +20,20 @@ resource "aws_s3_bucket_server_side_encryption_configuration" "bad_sse" {
   }
 }
 
-resource "aws_s3_bucket_server_side_encryption_configuration" "good_sse" {
-  bucket = aws_s3_bucket.example.id
+resource "aws_s3_bucket" "example" {
+  # bucket is not encrypted
+  bucket = "untugged"
+}
+
+resource "aws_s3_bucket_server_side_encryption_configuration" "example" {
+  bucket = aws_s3_bucket.example.bucket
 
   rule {
     apply_server_side_encryption_by_default {
-      kms_master_key_id = aws_kms_key.mykey.arn
-      sse_algorithm     = "aws:kms"
+      sse_algorithm     = "AES256"
     }
   }
 }
-
 # resource "aws_s3_bucket_replication_configuration" "replication" {
 #   depends_on = [aws_s3_bucket_versioning.bad_bucket]
 #   role   = aws_iam_role.bad_bucket_replication.arn
