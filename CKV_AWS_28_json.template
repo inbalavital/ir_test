@@ -1,0 +1,30 @@
+        "CreateAccountRolesDDBTable": {
+            "Properties": {
+                "Type": "AWS::DynamoDB::Table",
+                "AttributeDefinitions": [
+                    {
+                        "AttributeName": "Role",
+                        "AttributeType": "S"
+                    },
+                    {
+                        "AttributeName": "AccountId",
+                        "AttributeType": "S"
+                    }
+                ],
+                "KeySchema": [
+                    {
+                        "AttributeName": "Role",
+                        "KeyType": "HASH"
+                    },
+                    {
+                        "AttributeName": "AccountId",
+                        "KeyType": "RANGE"
+                    }
+                ],
+                "ProvisionedThroughput": {
+                    "ReadCapacityUnits": "5",
+                    "WriteCapacityUnits": "5"
+                },
+                "TableName": "CrossAccountManager-Account-Roles"
+            }
+        }
