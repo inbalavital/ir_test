@@ -141,7 +141,7 @@
             "Type": "AWS::S3::BucketPolicy",
             "Properties": {
                 "Bucket": {
-                    "Ref": "TrailBucket"
+                    "Ref": "TrailBucket1"
                 },
                 "PolicyDocument": {
                     "Version": "2012-10-17",
@@ -235,7 +235,7 @@
             "Type": "AWS::CloudTrail::Trail",
             "Properties": {
                 "S3BucketName": {
-                    "Ref": "TrailBucket"
+                    "Ref": "TrailBucket2"
                 },
                 "SnsTopicName": {
                     "Fn::If": [
