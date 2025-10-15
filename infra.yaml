@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: source-controller
+  namespace: flux-system
+  labels:
+    app: source-controller
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: source-controller
+  template:
+    metadata:
+      labels:
+        app: source-controller
+    spec:
+      containers:
+        - name: source-controller
+          image: ghcr.io/fluxcd/source-controller:v1.3.0
+          imagePullPolicy: IfNotPresent
+          # Optional: you can add command, args, env, ports etc. if needed
+          # command: ["source-controller"]
