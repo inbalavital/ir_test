@@ -1,0 +1,20 @@
+{
+  "name": "medium",
+  "version": "1.0.0",
+  "description": "Large package for SCA testing (frameworks and tooling).",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "sca",
+    "test",
+    "large"
+  ],
+  "license": "ISC",
+  "dependencies": {
+    "express": "4.19.2",
+    "nodemon": "3.1.0",
+    "yup": "1.4.0"
+  }
+}

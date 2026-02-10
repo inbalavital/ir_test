@@ -1,0 +1,69 @@
+# --- Cloud & Infrastructure (Massive transitive trees) ---
+boto3
+awscli
+google-cloud-storage
+google-cloud-bigquery
+google-cloud-pubsub
+azure-mgmt-resource
+azure-storage-blob
+pulumi
+
+# --- Machine Learning & AI (The heaviest hitters) ---
+tensorflow
+torch
+torchvision
+torchaudio
+transformers
+datasets
+scikit-learn
+xgboost
+lightgbm
+spacy
+nltk
+
+# --- Data Engineering & Orchestration ---
+apache-airflow[celery,postgres,google,aws]
+dagster
+pandas
+dask[complete]
+pyarrow
+modin[all]
+
+# --- Web & API Ecosystems ---
+django
+django-rest-framework
+flask
+flask-sqlalchemy
+fastapi[all]
+pydantic[email]
+gunicorn
+uvicorn
+
+# --- Scientific & Visualization ---
+jupyterlab
+notebook
+matplotlib
+plotly
+bokeh
+seaborn
+statsmodels
+
+# --- DevTools & Testing ---
+pytest
+pytest-cov
+black
+mypy
+flake8
+tox
+pre-commit
+
+# --- Miscellaneous Utilities (Commonly used) ---
+requests[security]
+celery[redis]
+sqlalchemy
+alembic
+python-dotenv
+cryptography
+pyyaml
+rich
+tqdm

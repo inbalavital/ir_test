@@ -1,0 +1,4 @@
+requests==2.12.4
+boto3==1.26.27
+botocore==1.29.27
+sca_pip_example==1.0.0

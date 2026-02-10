@@ -1,0 +1,22 @@
+{
+  "name": "small",
+  "version": "1.0.0",
+  "description": "Extra Large package for SCA testing (frontend and full-stack setup).",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "sca",
+    "test",
+    "xlarge"
+  ],
+  "license": "ISC",
+  "dependencies": {
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "next": "14.2.3",
+    "prisma": "5.14.0",
+    "supertest": "6.3.4"
+  }
+}
