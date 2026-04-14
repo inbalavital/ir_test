@@ -1,1 +1,0 @@
-# medium-sca-scale-test
