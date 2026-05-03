@@ -1,0 +1,51 @@
+lockfileVersion: '6.0'
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
+dependencies:
+  lodash:
+    specifier: 4.17.15
+    version: 4.17.15
+  axios:
+    specifier: 0.21.0
+    version: 0.21.0
+  express:
+    specifier: 4.16.0
+    version: 4.16.0
+  minimist:
+    specifier: 1.2.0
+    version: 1.2.0
+
+devDependencies:
+  typescript:
+    specifier: 4.0.0
+    version: 4.0.0
+
+packages:
+  /lodash@4.17.15:
+    resolution: {integrity: sha512-fake}
+    dev: false
+
+  /axios@0.21.0:
+    resolution: {integrity: sha512-fake}
+    dependencies:
+      follow-redirects: 1.13.0
+    dev: false
+
+  /follow-redirects@1.13.0:
+    resolution: {integrity: sha512-fake}
+    dev: false
+
+  /express@4.16.0:
+    resolution: {integrity: sha512-fake}
+    dev: false
+
+  /minimist@1.2.0:
+    resolution: {integrity: sha512-fake}
+    dev: false
+
+  /typescript@4.0.0:
+    resolution: {integrity: sha512-fake}
+    dev: true

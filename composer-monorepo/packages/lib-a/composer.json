@@ -1,0 +1,10 @@
+{
+    "name": "fixture/lib-a",
+    "description": "Library A",
+    "type": "library",
+    "autoload": { "psr-4": { "Fixture\\LibA\\": "src/" } },
+    "require": {
+        "php": ">=7.4",
+        "monolog/monolog": "1.25.0"
+    }
+}

@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "api-service"
+version = "0.1.0"
+description = "API service"
+authors = ["fixture <fixture@example.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+flask = "1.0.0"
+requests = "2.20.0"
+shared-lib = { path = "../../libs/shared", develop = true }
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

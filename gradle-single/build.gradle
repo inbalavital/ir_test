@@ -1,0 +1,23 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+group = 'com.fixture'
+version = '1.0.0'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.apache.logging.log4j:log4j-core:2.14.0'
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.9.10'
+    implementation 'org.springframework:spring-core:5.2.0.RELEASE'
+    implementation 'commons-collections:commons-collections:3.2.1'
+    testImplementation 'junit:junit:4.12'
+}
+
+application {
+    mainClass = 'com.fixture.Main'
+}

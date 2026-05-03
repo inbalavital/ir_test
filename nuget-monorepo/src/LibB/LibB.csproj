@@ -1,0 +1,10 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\LibA\LibA.csproj" />
+    <PackageReference Include="System.Text.Encodings.Web" Version="4.7.1" />
+  </ItemGroup>
+</Project>

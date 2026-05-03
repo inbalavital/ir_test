@@ -1,0 +1,12 @@
+// Root build file
+allprojects {
+    group = 'com.fixture'
+    version = '1.0.0'
+    repositories {
+        mavenCentral()
+    }
+}
+
+subprojects {
+    apply plugin: 'java'
+}

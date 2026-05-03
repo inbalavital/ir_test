@@ -1,0 +1,4 @@
+dependencies {
+    implementation project(':lib-a')
+    implementation 'commons-collections:commons-collections:3.2.1'
+}

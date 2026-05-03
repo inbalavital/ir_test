@@ -1,0 +1,11 @@
+[package]
+name = "cargo-single-fixture"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+serde = "1.0.100"
+tokio = "1.0.0"
+openssl = "0.10.30"
+hyper = "0.14.0"
+chrono = "0.4.0"

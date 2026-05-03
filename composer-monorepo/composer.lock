@@ -1,0 +1,14 @@
+{
+    "_readme": ["Locked deps"],
+    "content-hash": "fake",
+    "packages": [
+        {"name": "fixture/lib-a", "version": "1.0.0"},
+        {"name": "fixture/lib-b", "version": "1.0.0"},
+        {"name": "monolog/monolog", "version": "1.25.0"},
+        {"name": "guzzlehttp/guzzle", "version": "6.5.0"},
+        {"name": "symfony/http-foundation", "version": "4.4.0"}
+    ],
+    "packages-dev": [],
+    "platform": {"php": ">=7.4"},
+    "platform-dev": []
+}

@@ -1,0 +1,19 @@
+{
+  "name": "npm-single-fixture",
+  "version": "1.0.0",
+  "description": "SCA test fixture - single npm project with vulnerable dependencies",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "dependencies": {
+    "lodash": "4.17.15",
+    "axios": "0.21.0",
+    "express": "4.16.0",
+    "minimist": "1.2.0",
+    "node-fetch": "2.6.0"
+  },
+  "devDependencies": {
+    "mocha": "8.0.0"
+  }
+}

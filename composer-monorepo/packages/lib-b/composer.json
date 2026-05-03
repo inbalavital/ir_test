@@ -1,0 +1,14 @@
+{
+    "name": "fixture/lib-b",
+    "description": "Library B (depends on Lib A)",
+    "type": "library",
+    "autoload": { "psr-4": { "Fixture\\LibB\\": "src/" } },
+    "repositories": [
+        { "type": "path", "url": "../lib-a" }
+    ],
+    "require": {
+        "php": ">=7.4",
+        "fixture/lib-a": "*",
+        "guzzlehttp/guzzle": "6.5.0"
+    }
+}

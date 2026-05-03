@@ -1,0 +1,14 @@
+plugins {
+    id 'application'
+}
+
+dependencies {
+    implementation project(':lib-a')
+    implementation project(':lib-b')
+    implementation 'org.springframework:spring-core:5.2.0.RELEASE'
+    testImplementation 'junit:junit:4.12'
+}
+
+application {
+    mainClass = 'com.fixture.app.App'
+}

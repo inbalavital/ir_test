@@ -1,0 +1,10 @@
+{
+  "name": "@fixture/pkg-c",
+  "version": "1.0.0",
+  "main": "index.js",
+  "dependencies": {
+    "@fixture/pkg-a": "1.0.0",
+    "@fixture/pkg-b": "1.0.0",
+    "node-fetch": "2.6.0"
+  }
+}

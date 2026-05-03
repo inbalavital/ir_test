@@ -1,0 +1,9 @@
+{
+  "name": "@fixture/pkg-c",
+  "version": "1.0.0",
+  "main": "index.js",
+  "dependencies": {
+    "@fixture/pkg-b": "workspace:*",
+    "minimist": "1.2.0"
+  }
+}

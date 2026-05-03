@@ -1,0 +1,9 @@
+[package]
+name = "lib-b"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+lib-a = { path = "../lib-a" }
+hyper = "0.14.0"
+chrono = "0.4.0"

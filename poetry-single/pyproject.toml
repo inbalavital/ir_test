@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "poetry-single-fixture"
+version = "0.1.0"
+description = "Single poetry project for SCA testing"
+authors = ["fixture <fixture@example.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+requests = "2.20.0"
+urllib3 = "1.25.8"
+flask = "1.0.0"
+jinja2 = "2.10"
+pyyaml = "5.1"
+
+[tool.poetry.dev-dependencies]
+pytest = "5.0.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

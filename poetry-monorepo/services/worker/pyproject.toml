@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "worker-service"
+version = "0.1.0"
+description = "Worker service"
+authors = ["fixture <fixture@example.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+celery = "4.3.0"
+requests = "2.20.0"
+urllib3 = "1.25.8"
+shared-lib = { path = "../../libs/shared", develop = true }
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
