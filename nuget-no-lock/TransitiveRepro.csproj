@@ -1,0 +1,36 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!--
+    XSUP-70187 transitive-CVE reproduction fixture.
+
+    Goal: prove the cdxgen "/.dotnet permission denied" bug that drops transitive deps.
+
+    This project declares ONE direct PackageReference that itself has NO well-known
+    *direct* CVE, but which pulls in VULNERABLE TRANSITIVE dependencies:
+
+      Microsoft.Data.SqlClient 1.1.0
+        └─ (transitive) System.Text.Encodings.Web 4.5.0   -> CVE-2021-26701 (Critical RCE)
+        └─ (transitive) System.Data.SqlClient            -> CVE-2024-0056  (security feature bypass)
+        └─ (transitive) Microsoft.Win32.Registry, etc.
+
+    Expected A/B behaviour:
+      * BASELINE (buggy scanner): dotnet restore crashes -> manifest-only parse ->
+        only the single DIRECT package is reported, 0 transitive packages, 0 CVEs.
+      * FIXED scanner: dotnet restore succeeds -> full graph resolved ->
+        transitive packages appear AND their CVEs (e.g. CVE-2021-26701) are reported.
+  -->
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+    <RootNamespace>TransitiveRepro</RootNamespace>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- Single DIRECT dependency; its vulnerabilities live in its TRANSITIVE closure. -->
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="1.1.0" />
+  </ItemGroup>
+
+</Project>
