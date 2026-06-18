@@ -1,5 +1,0 @@
-rootProject.name = 'gradle-monorepo-fixture'
-
-include 'app'
-include 'lib-a'
-include 'lib-b'
