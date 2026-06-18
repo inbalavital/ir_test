@@ -1,56 +1,105 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.cdk.cdkonwheels</groupId>
-    <artifactId>cdkonwheels</artifactId>
+    <groupId>com.test</groupId>
+    <artifactId>maven-version-placeholder-test</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>1.3.1.RELEASE</version>
-    </parent>
-
-    <name>cdkonwheels</name>
-    <url>http://maven.apache.org</url>
+    <name>Maven Version Placeholder Test</name>
+    <description>
+        Test pom.xml for verifying SCA remediation with Maven version placeholders.
+        Uses property syntax for dependencies with known CVEs (direct + transitive).
+    </description>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+
+        <!-- Version placeholders — these are the versions we want to test remediation against -->
+        <!-- DIRECT CVEs: log4j-core 2.14.1 has CVE-2021-44228 (Log4Shell), fix: 2.17.1 -->
+        <log4j.version>2.14.1</log4j.version>
+
+        <!-- DIRECT CVEs: jackson-databind 2.9.8 has CVE-2019-12384, CVE-2019-14540, etc., fix: 2.13.4+ -->
+        <jackson.version>2.9.8</jackson.version>
+
+        <!-- DIRECT CVEs: commons-collections 3.2.1 has CVE-2015-4852, fix: 3.2.2 -->
+        <commons-collections.version>3.2.1</commons-collections.version>
+
+        <!-- TRANSITIVE CVEs via spring-boot-starter-web 2.5.0:
+             - pulls snakeyaml 1.28 (CVE-2022-1471, fix: 2.0)
+             - pulls tomcat-embed-core 9.0.46 (multiple CVEs)
+             - pulls spring-web 5.3.7 (CVE-2024-22243) -->
+        <spring-boot.version>2.5.0</spring-boot.version>
+
+        <!-- TRANSITIVE CVEs via httpclient 4.5.6:
+             - httpclient itself has CVE-2020-13956 (fix: 4.5.13) -->
+        <httpclient.version>4.5.6</httpclient.version>
+
+        <!-- DIRECT CVEs: guava 29.0-jre has CVE-2020-8908, fix: 32.0.0+ -->
+        <guava.version>29.0-jre</guava.version>
     </properties>
-    <profiles></profiles>
+
     <dependencies>
+        <!-- ============================================ -->
+        <!-- DIRECT dependencies with version placeholders -->
+        <!-- ============================================ -->
+
+        <!-- log4j-core: CVE-2021-44228 (Log4Shell) — CRITICAL -->
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>${log4j.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-api</artifactId>
+            <version>${log4j.version}</version>
+        </dependency>
+
+        <!-- jackson-databind: CVE-2019-12384, CVE-2019-14540, many more -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>${jackson.version}</version>
+        </dependency>
+
+        <!-- commons-collections: CVE-2015-4852 (deserialization RCE) -->
+        <dependency>
+            <groupId>commons-collections</groupId>
+            <artifactId>commons-collections</artifactId>
+            <version>${commons-collections.version}</version>
+        </dependency>
+
+        <!-- guava: CVE-2020-8908 (temp directory permissions) -->
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>${guava.version}</version>
+        </dependency>
+
+        <!-- ============================================ -->
+        <!-- Dependencies that pull VULNERABLE TRANSITIVES -->
+        <!-- ============================================ -->
+
+        <!-- spring-boot-starter-web pulls:
+             - snakeyaml 1.28 (CVE-2022-1471)
+             - tomcat-embed-core 9.0.46 (multiple CVEs)
+             - spring-web 5.3.7 (CVE-2024-22243) -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+            <version>${spring-boot.version}</version>
         </dependency>
+
+        <!-- httpclient: itself has CVE-2020-13956, and pulls vulnerable transitives -->
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-jpa</artifactId>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+            <version>${httpclient.version}</version>
         </dependency>
-        <dependency>
-            <groupId>com.h2database</groupId>
-            <artifactId>h2</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-api</artifactId>
-            <version>RELEASE</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-configuration-processor</artifactId>
-            <optional>true</optional>
-      </dependency>
- </dependencies>
+    </dependencies>
 </project>
