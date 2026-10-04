@@ -54,7 +54,7 @@ require (
 	// CVE-2021-41190
 	github.com/opencontainers/image-spec v1.0.1
 	// CVE-2021-43784, CVE-2022-29162, CVE-2024-21626
-	github.com/opencontainers/runc v1.0.2
+	github.com/opencontainers/runc v1.2.8
 	// CVE-2022-21698
 	github.com/prometheus/client_golang v1.11.0
 	// CVE-2021-3538
