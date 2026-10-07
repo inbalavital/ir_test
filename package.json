@@ -228,7 +228,7 @@
     "ua-parser-js": "0.7.28",
     "update-notifier": "5.1.0",
     "json-ptr": "2.2.0",
-    "unset-value": "1.0.0",
+    "unset-value": "2.0.1",
     "node-serialize": "0.0.4",
     "yaml": "1.9.0",
     "merge-deep": "3.0.2",
