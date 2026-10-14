@@ -44,7 +44,7 @@ require (
 	// CVE-2024-27304
 	github.com/jackc/pgx/v4 v4.13.0
 	// CVE-2022-40083, CVE-2024-29927
-	github.com/labstack/echo/v4 v4.6.0
+	github.com/labstack/echo/v4 v4.15.3
 
 	// --- Misc with known CVEs ---
 	// CVE-2024-0406
